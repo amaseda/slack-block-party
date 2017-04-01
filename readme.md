@@ -12,7 +12,7 @@ In essence, **Slack Block Party** can be used to make a public channel read-only
 ### Setup
 
 ```bash
-$ git clone xxx
+$ git clone git@github.com:amaseda/slack-block-party.git
 $ npm install
 $ nodemon
 ```
