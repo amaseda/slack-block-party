@@ -25,11 +25,14 @@ This tool requires an `env.js` in the root directory with the following contents
 module.exports = {
   slackBotToken: "bot-token-goes-here",
   webToken: "user-token-goes-here",
-  monitoredChannels: [
-    "channel-id-goes-here"
-  ],
-  validUsers: [
-    "user-id-goes-here"
-  ]
+  channelsAndUsers: {
+    "channel-id-goes-here": [
+      "user-id-goes-here"
+    ],
+    "can-have-multiple-channels": [
+      "can-also-have",
+      "multiple-users"
+    ]
+  }
 }
 ```
