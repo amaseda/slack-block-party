@@ -20,7 +20,6 @@ const validUsers = process.env.VALID_USERS || env.validUsers
 const channelsAndUsers = process.env.CHANNELS_AND_USERS || env.channelsAndUsers
 
 rtm.on(RTM_EVENTS.MESSAGE, message => {
-  console.log(message)
   const isMonitoredChannel = Object.keys(channelsAndUsers).includes(message.channel)
   const isNotValidUser = !(channelsAndUsers[message.channel].includes(message.user))
 
