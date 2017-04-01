@@ -36,3 +36,5 @@ module.exports = {
   }
 }
 ```
+
+> The user token must belong to an owner of the Slack team(s) in question.
