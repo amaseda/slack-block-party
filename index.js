@@ -22,7 +22,10 @@ rtm.on(RTM_EVENTS.MESSAGE, message => {
   const isNotValidUser = !(channelsAndUsers[message.channel].includes(message.user))
 
   if(isMonitoredChannel && isNotValidUser){
+    // Deletes message
     webAdmin.chat.delete(message.ts, message.channel)
+
+    // Pings unauthorized user
     webAdmin.users.info(message.user).then(userResponse => {  // Convert user id to name
       webAdmin.channels.info(message.channel).then(channelResponse => {   // Convert channel id to name
         const username = `@${userResponse.user.name}`
