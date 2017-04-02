@@ -14,10 +14,8 @@ const rtm = new RtmClient(botToken)
 const webAdmin = new WebClient(webToken)
 const webBot = new WebClient(botToken)
 
-// Arrays of monitored Slack channels and whitelisted users (define in env.js)
+// Object containing monitored channels and their respective whitelisted users (define in env.js)
 const monitoredChannels = process.env.MONITORED_CHANNELS || env.monitoredChannels
-const validUsers = process.env.VALID_USERS || env.validUsers
-const channelsAndUsers = process.env.CHANNELS_AND_USERS || env.channelsAndUsers
 
 rtm.on(RTM_EVENTS.MESSAGE, message => {
   const isMonitoredChannel = Object.keys(channelsAndUsers).includes(message.channel)
